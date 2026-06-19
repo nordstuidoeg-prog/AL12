@@ -1,0 +1,215 @@
+/* ============================================================
+   AquaLayer™ — About page styles
+   ============================================================ */
+
+/* ── Big Idea Hero ───────────────────────────────────────── */
+
+.about-hero {
+  position: relative;
+  min-height: 80svh;
+  display: flex;
+  align-items: flex-end;
+  background: var(--abyss-deep);
+  overflow: hidden;
+  padding-top: var(--nav-height);
+}
+
+.about-hero-ground {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 90% 70% at 50% 80%,
+    rgba(7, 28, 46, 0.8) 0%,
+    var(--abyss-deep) 100%
+  );
+}
+
+.about-hero-content {
+  position: relative;
+  z-index: 1;
+  padding: var(--sp-7) var(--gutter);
+  max-width: var(--max-width);
+  margin-inline: auto;
+  width: 100%;
+}
+
+.about-hero-headline {
+  font-family: var(--font-sans);
+  font-size: clamp(2rem, 5vw, 5rem);
+  font-weight: 300;
+  line-height: var(--leading-tight);
+  letter-spacing: -0.03em;
+  color: var(--pearl-gelcoat);
+  max-width: 22ch;
+  margin-top: var(--sp-4);
+  margin-bottom: var(--sp-4);
+}
+
+.about-hero-sub {
+  font-size: var(--text-body-lg);
+  color: rgba(245, 241, 233, 0.6);
+  max-width: 44ch;
+  line-height: var(--leading-body);
+}
+
+/* ── Mission · Vision · Purpose ──────────────────────────── */
+
+.mvp-section {
+  padding-block: var(--section-y-mobile);
+  background: var(--abyss-navy);
+}
+
+.mvp-header {
+  margin-bottom: var(--sp-6);
+}
+
+@media (min-width: 768px) {
+  .mvp-section { padding-block: var(--section-y-desktop); }
+}
+
+/* ── Five Pillars ────────────────────────────────────────── */
+
+.pillars-section {
+  padding-block: var(--section-y-mobile);
+  background: var(--abyss-deep);
+}
+
+.pillars-section-header {
+  margin-bottom: var(--sp-6);
+}
+
+.five-pillars {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.pillar-row {
+  display: grid;
+  grid-template-columns: 3rem 1fr;
+  gap: var(--sp-3) var(--sp-5);
+  align-items: start;
+  padding-block: var(--sp-5);
+  border-top: var(--waterline);
+}
+
+.pillar-row:last-child {
+  border-bottom: var(--waterline);
+}
+
+.pillar-row-num {
+  font-family: var(--font-accent);
+  font-size: var(--text-eyebrow);
+  font-weight: 500;
+  letter-spacing: var(--tracking-wide);
+  color: var(--liquid-silver);
+  padding-top: 0.25em;
+  font-variant-numeric: tabular-nums;
+}
+
+.pillar-row-title {
+  font-family: var(--font-sans);
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--pearl-gelcoat);
+  margin-bottom: var(--sp-2);
+}
+
+.pillar-row-body {
+  grid-column: 2;
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+  color: rgba(245, 241, 233, 0.6);
+}
+
+@media (min-width: 768px) {
+  .pillars-section { padding-block: var(--section-y-desktop); }
+
+  .pillar-row {
+    grid-template-columns: 4rem 1fr 2fr;
+    gap: var(--sp-3) var(--sp-6);
+    align-items: baseline;
+  }
+
+  .pillar-row-body { grid-column: 3; grid-row: 1; }
+}
+
+/* ── Egypt's Marine Conditions ───────────────────────────── */
+
+.conditions-section {
+  padding-block: var(--section-y-mobile);
+  background: var(--abyss-navy);
+}
+
+.conditions-header {
+  margin-bottom: var(--sp-6);
+}
+
+.conditions-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-6);
+}
+
+.conditions-prose {
+  font-size: var(--text-body-lg);
+  line-height: var(--leading-body);
+  color: rgba(245, 241, 233, 0.75);
+}
+
+.conditions-prose p + p {
+  margin-top: var(--sp-4);
+}
+
+.conditions-specs {
+  background: var(--abyss-panel);
+  border: var(--card-border);
+  border-radius: var(--card-radius);
+  padding: var(--sp-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+.spec-item {
+  padding-top: var(--sp-3);
+  border-top: var(--waterline);
+}
+
+.spec-item:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+.spec-label {
+  font-family: var(--font-accent);
+  font-size: var(--text-eyebrow);
+  font-weight: 500;
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--liquid-silver);
+  margin-bottom: var(--sp-2);
+}
+
+.spec-value {
+  font-size: var(--text-body);
+  line-height: var(--leading-snug);
+  color: var(--pearl-gelcoat);
+}
+
+@media (min-width: 768px) {
+  .conditions-section { padding-block: var(--section-y-desktop); }
+  .conditions-grid    { grid-template-columns: 1fr 1fr; gap: var(--sp-8); }
+}
+
+/* ── About closing ───────────────────────────────────────── */
+
+.about-closing {
+  padding-block: var(--section-y-mobile);
+  background: var(--abyss-deep);
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .about-closing { padding-block: var(--section-y-desktop); }
+}

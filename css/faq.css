@@ -1,0 +1,140 @@
+/* ============================================================
+   AquaLayer™ — FAQ page styles
+   ============================================================ */
+
+/* ── FAQ Hero ────────────────────────────────────────────── */
+
+.faq-hero {
+  padding-top: calc(var(--nav-height) + var(--sp-7));
+  padding-bottom: var(--sp-6);
+  background: var(--abyss-deep);
+}
+
+.faq-hero-content {
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.faq-hero-headline {
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 300;
+  letter-spacing: -0.03em;
+  line-height: var(--leading-tight);
+  color: var(--pearl-gelcoat);
+  margin-top: var(--sp-3);
+  margin-bottom: var(--sp-3);
+}
+
+.faq-hero-sub {
+  font-size: var(--text-body-lg);
+  color: rgba(245, 241, 233, 0.55);
+  max-width: 44ch;
+}
+
+/* ── FAQ Accordion Sections ──────────────────────────────── */
+
+.faq-section {
+  padding-block: var(--section-y-mobile);
+}
+
+.faq-section:nth-child(odd)  { background: var(--abyss-navy); }
+.faq-section:nth-child(even) { background: var(--abyss-deep); }
+
+.faq-section-header {
+  margin-bottom: var(--sp-5);
+}
+
+.faq-section-title {
+  font-family: var(--font-accent);
+  font-size: var(--text-eyebrow);
+  font-weight: 500;
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--liquid-silver);
+  margin-top: var(--sp-3);
+}
+
+/* FAQ allows multiple items open simultaneously */
+.faq-group .accordion-item { border-top: var(--waterline); }
+.faq-group .accordion-item:last-child { border-bottom: var(--waterline); }
+
+.faq-group .accordion-trigger {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  padding: var(--sp-4) 0;
+  text-align: left;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--pearl-gelcoat);
+  background: none;
+  border: none;
+  cursor: pointer;
+  gap: var(--sp-5);
+  transition: color var(--duration-fast);
+  line-height: var(--leading-snug);
+}
+
+.faq-group .accordion-trigger:hover { color: var(--liquid-silver); }
+
+.faq-group .accordion-icon {
+  flex-shrink: 0;
+  font-size: 1.25rem;
+  font-weight: 300;
+  color: var(--liquid-silver);
+  line-height: 1;
+  margin-top: 0.1em;
+  transition: transform var(--duration-fast) var(--ease-out),
+              color var(--duration-fast);
+}
+
+.faq-group .accordion-item.is-open .accordion-icon {
+  transform: rotate(45deg);
+  color: var(--pearl-gelcoat);
+}
+
+.faq-group .accordion-body {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height var(--duration-mid) var(--ease-out);
+}
+
+.faq-group .accordion-body[open] { max-height: 800px; }
+
+.faq-group .accordion-body p {
+  padding-bottom: var(--sp-5);
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+  color: rgba(245, 241, 233, 0.65);
+  max-width: 64ch;
+}
+
+@media (min-width: 768px) {
+  .faq-section { padding-block: var(--section-y-desktop); }
+}
+
+/* ── FAQ closing ─────────────────────────────────────────── */
+
+.faq-closing {
+  padding-block: var(--section-y-mobile);
+  background: var(--abyss-navy);
+  text-align: center;
+}
+
+.faq-closing-copy {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  color: var(--pearl-gelcoat);
+  max-width: 28ch;
+  margin-inline: auto;
+  margin-bottom: var(--sp-6);
+  line-height: var(--leading-snug);
+}
+
+@media (min-width: 768px) {
+  .faq-closing { padding-block: var(--section-y-desktop); }
+}

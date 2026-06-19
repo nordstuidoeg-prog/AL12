@@ -1,0 +1,190 @@
+/* ============================================================
+   AquaLayer™ — Gallery page styles
+   ============================================================ */
+
+/* ── Gallery Hero ────────────────────────────────────────── */
+
+.gallery-hero {
+  padding-top: calc(var(--nav-height) + var(--sp-7));
+  padding-bottom: var(--sp-6);
+  background: var(--abyss-navy);
+}
+
+.gallery-hero-content {
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.gallery-hero-headline {
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 300;
+  letter-spacing: -0.03em;
+  line-height: var(--leading-tight);
+  color: var(--pearl-gelcoat);
+  margin-top: var(--sp-3);
+  margin-bottom: var(--sp-3);
+}
+
+.gallery-hero-sub {
+  font-size: var(--text-body-lg);
+  color: rgba(245, 241, 233, 0.55);
+  max-width: 44ch;
+}
+
+/* ── Filter bar ──────────────────────────────────────────── */
+
+.filter-bar {
+  position: sticky;
+  top: var(--nav-height);
+  z-index: 10;
+  background: rgba(2, 21, 35, 0.96);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: var(--waterline);
+  padding-block: var(--sp-3);
+}
+
+.filter-bar-inner {
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2) var(--sp-4);
+  align-items: center;
+}
+
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  flex-wrap: wrap;
+}
+
+.filter-group-label {
+  font-family: var(--font-accent);
+  font-size: 0.625rem;
+  font-weight: 500;
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: rgba(245, 241, 233, 0.35);
+}
+
+.filter-btn {
+  font-family: var(--font-accent);
+  font-size: 0.625rem;
+  font-weight: 500;
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: rgba(245, 241, 233, 0.5);
+  background: none;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  padding: 4px 10px;
+  cursor: pointer;
+  transition:
+    color var(--duration-fast),
+    border-color var(--duration-fast);
+}
+
+.filter-btn:hover { color: var(--pearl-gelcoat); }
+
+.filter-btn.is-active {
+  color: var(--pearl-gelcoat);
+  border-color: rgba(183, 190, 197, 0.3);
+  text-decoration: underline;
+  text-decoration-color: var(--liquid-silver);
+  text-underline-offset: 3px;
+}
+
+.filter-sep {
+  width: 1px;
+  height: 16px;
+  background: rgba(183, 190, 197, 0.15);
+}
+
+/* ── Case study grid ─────────────────────────────────────── */
+
+.gallery-grid-section {
+  padding-block: var(--section-y-mobile);
+  background: var(--abyss-navy);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-6);
+}
+
+.case-study {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  transition: opacity var(--duration-fast);
+}
+
+.case-study.is-hidden {
+  display: none;
+}
+
+.case-study-label {
+  font-family: var(--font-accent);
+  font-size: var(--text-eyebrow);
+  font-weight: 500;
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--liquid-silver);
+}
+
+.case-study-caption {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  flex-wrap: wrap;
+}
+
+.case-study-title {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--pearl-gelcoat);
+}
+
+.case-study-spec {
+  font-family: var(--font-accent);
+  font-size: 0.625rem;
+  font-weight: 500;
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: rgba(245, 241, 233, 0.4);
+}
+
+.case-study-spec-sep { color: rgba(183, 190, 197, 0.2); }
+
+@media (min-width: 768px) {
+  .gallery-grid-section { padding-block: var(--section-y-desktop); }
+  .gallery-grid         { grid-template-columns: 1fr 1fr; gap: var(--sp-7); }
+}
+
+/* ── Gallery closing ─────────────────────────────────────── */
+
+.gallery-closing {
+  padding-block: var(--section-y-mobile);
+  background: var(--abyss-deep);
+  text-align: center;
+}
+
+.gallery-closing-copy {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  color: var(--pearl-gelcoat);
+  max-width: 26ch;
+  margin-inline: auto;
+  margin-bottom: var(--sp-6);
+  line-height: var(--leading-snug);
+}
+
+@media (min-width: 768px) {
+  .gallery-closing { padding-block: var(--section-y-desktop); }
+}

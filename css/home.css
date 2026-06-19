@@ -1,0 +1,268 @@
+/* ============================================================
+   AquaLayer™ — Home page styles
+   ============================================================ */
+
+/* ── Hero — The Settle ───────────────────────────────────── */
+
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+  background: var(--abyss-deep);
+}
+
+/* Deep hull gradient placeholder */
+.hero-ground {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 70%,
+      rgba(7, 28, 46, 0.9) 0%,
+      rgba(2, 21, 35, 0.95) 50%,
+      var(--abyss-deep) 100%);
+  z-index: 0;
+}
+
+/* Gloss sweep — fires once on load */
+.hero-gloss {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 20%,
+    rgba(203, 210, 216, 0.08) 45%,
+    rgba(183, 190, 197, 0.14) 50%,
+    rgba(203, 210, 216, 0.06) 55%,
+    transparent 80%
+  );
+  transform: translateX(-110%);
+  z-index: 1;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.hero-gloss.is-sweeping {
+  transform: translateX(110%);
+  transition: transform 900ms var(--ease-out);
+}
+
+/* Waterline at the hero base */
+.hero-waterline {
+  position: relative;
+  z-index: 2;
+  transform-origin: left center;
+  transform: scaleX(0);
+  transition: transform var(--duration-slow) var(--ease-out);
+}
+
+.hero-waterline.is-visible {
+  transform: scaleX(1);
+}
+
+/* Hero content */
+.hero-content {
+  position: relative;
+  z-index: 3;
+  padding: var(--sp-8) var(--gutter) var(--sp-7);
+  max-width: var(--max-width);
+  margin-inline: auto;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity var(--duration-mid) var(--ease-out),
+    transform var(--duration-mid) var(--ease-out);
+}
+
+.hero-content.is-settled {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-eyebrow {
+  margin-bottom: var(--sp-4);
+}
+
+.hero-headline {
+  font-family: var(--font-sans);
+  font-size: var(--text-hero);
+  font-weight: 300;
+  line-height: var(--leading-tight);
+  letter-spacing: -0.03em;
+  color: var(--pearl-gelcoat);
+  margin-bottom: var(--sp-4);
+  max-width: 14ch;
+}
+
+.hero-sub {
+  font-size: var(--text-body-lg);
+  line-height: var(--leading-snug);
+  color: rgba(245, 241, 233, 0.6);
+  max-width: 40ch;
+  margin-bottom: var(--sp-6);
+}
+
+@media (min-width: 768px) {
+  .hero-content {
+    padding-block: var(--sp-9);
+  }
+  .hero-sub {
+    font-size: 1.25rem;
+  }
+}
+
+/* ── Reframe section ─────────────────────────────────────── */
+
+.reframe {
+  padding-block: var(--sp-7);
+  background: var(--abyss-navy);
+}
+
+.reframe-inner {
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+  padding-block: var(--sp-7);
+  text-align: center;
+}
+
+.reframe-statement {
+  font-family: var(--font-sans);
+  font-size: clamp(2.25rem, 5vw, 5rem);
+  font-weight: 300;
+  line-height: var(--leading-tight);
+  letter-spacing: -0.03em;
+  color: var(--pearl-gelcoat);
+}
+
+@media (min-width: 768px) {
+  .reframe-inner { text-align: left; }
+}
+
+/* ── Layer stack (Clean · Correct · Protect) ─────────────── */
+
+.layer-stack {
+  padding-block: var(--section-y-mobile);
+  background: var(--abyss-navy);
+}
+
+.layer-stack-header {
+  margin-bottom: var(--sp-6);
+}
+
+.layer-stack-header .section-heading {
+  margin-top: var(--sp-3);
+}
+
+.layer-stack-footer {
+  margin-top: var(--sp-6);
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .layer-stack {
+    padding-block: var(--section-y-desktop);
+  }
+  .layer-stack-footer { text-align: left; }
+}
+
+/* ── Transformation teaser ───────────────────────────────── */
+
+.transformation {
+  padding-block: var(--section-y-mobile);
+  background: var(--abyss-deep);
+}
+
+.transformation-header {
+  margin-bottom: var(--sp-5);
+}
+
+.transformation-footer {
+  margin-top: var(--sp-5);
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .transformation         { padding-block: var(--section-y-desktop); }
+  .transformation-footer  { text-align: left; }
+}
+
+/* ── Why AquaLayer (3 pillars) ───────────────────────────── */
+
+.why-aqualayer {
+  padding-block: var(--section-y-mobile);
+  background: var(--abyss-navy);
+}
+
+.why-header {
+  margin-bottom: var(--sp-6);
+}
+
+.pillars-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-6);
+}
+
+.pillar {
+  padding-top: var(--sp-4);
+  border-top: var(--waterline);
+}
+
+.pillar-num {
+  display: block;
+  font-family: var(--font-accent);
+  font-size: var(--text-eyebrow);
+  font-weight: 500;
+  letter-spacing: var(--tracking-wide);
+  color: var(--liquid-silver);
+  margin-bottom: var(--sp-3);
+  font-variant-numeric: tabular-nums;
+}
+
+.pillar-title {
+  font-family: var(--font-sans);
+  font-size: 1.375rem;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: var(--pearl-gelcoat);
+  margin-bottom: var(--sp-3);
+}
+
+.pillar-body {
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+  color: rgba(245, 241, 233, 0.6);
+}
+
+@media (min-width: 768px) {
+  .why-aqualayer   { padding-block: var(--section-y-desktop); }
+  .pillars-grid    { grid-template-columns: repeat(3, 1fr); gap: var(--sp-5); }
+}
+
+/* ── Closing invitation ──────────────────────────────────── */
+
+.closing {
+  padding-block: var(--section-y-mobile);
+  background: var(--abyss-deep);
+  text-align: center;
+}
+
+.closing-copy {
+  font-family: var(--font-sans);
+  font-size: clamp(1.5rem, 3.5vw, 3rem);
+  font-weight: 300;
+  line-height: var(--leading-snug);
+  letter-spacing: -0.02em;
+  color: var(--pearl-gelcoat);
+  max-width: 24ch;
+  margin-inline: auto;
+  margin-bottom: var(--sp-6);
+}
+
+@media (min-width: 768px) {
+  .closing { padding-block: var(--section-y-desktop); }
+}

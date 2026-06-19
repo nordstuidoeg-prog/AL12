@@ -1,0 +1,208 @@
+/* ============================================================
+   AquaLayer™ — Contact page styles (Pearl page)
+   ============================================================ */
+
+/* ── Contact layout ──────────────────────────────────────── */
+
+.contact-page {
+  min-height: 100svh;
+  padding-top: var(--nav-height);
+  background: var(--pearl-gelcoat);
+}
+
+.contact-inner {
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding: var(--sp-7) var(--gutter) var(--sp-9);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-8);
+}
+
+@media (min-width: 768px) {
+  .contact-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--sp-9);
+    align-items: start;
+    padding-block: var(--sp-9);
+  }
+}
+
+/* ── Left: Concierge panel ───────────────────────────────── */
+
+.concierge {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-6);
+}
+
+.concierge-eyebrow {
+  font-family: var(--font-accent);
+  font-size: var(--text-eyebrow);
+  font-weight: 500;
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: rgba(2, 21, 35, 0.5);
+}
+
+.concierge-headline {
+  font-family: var(--font-serif);
+  font-size: clamp(2.25rem, 4vw, 3.75rem);
+  font-weight: 400;
+  line-height: var(--leading-tight);
+  letter-spacing: -0.02em;
+  color: var(--abyss-navy);
+}
+
+/* "newer" is set in Manier italic via <em> */
+.concierge-headline em {
+  font-style: italic;
+  font-weight: 400;
+}
+
+.concierge-contacts {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+.contact-block {}
+
+.contact-block-label {
+  font-family: var(--font-accent);
+  font-size: 0.625rem;
+  font-weight: 500;
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: rgba(2, 21, 35, 0.4);
+  margin-bottom: var(--sp-1);
+}
+
+.contact-block-value {
+  font-size: var(--text-body);
+  color: var(--abyss-navy);
+  line-height: var(--leading-snug);
+}
+
+.contact-block-value a {
+  color: var(--abyss-navy);
+  transition: opacity var(--duration-fast);
+}
+
+.contact-block-value a:hover { opacity: 0.6; }
+
+.concierge-channels {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.channel-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-family: var(--font-accent);
+  font-size: var(--text-eyebrow);
+  font-weight: 500;
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--abyss-navy);
+  border-bottom: 1px solid rgba(2, 21, 35, 0.25);
+  padding-bottom: 2px;
+  width: fit-content;
+  transition: border-color var(--duration-fast), opacity var(--duration-fast);
+}
+
+.channel-link:hover {
+  border-color: var(--abyss-navy);
+  opacity: 0.7;
+}
+
+/* ── Right: Form ─────────────────────────────────────────── */
+
+.contact-form-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-5);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+}
+
+.form-label {
+  font-family: var(--font-accent);
+  font-size: 0.625rem;
+  font-weight: 500;
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: rgba(2, 21, 35, 0.5);
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  color: var(--abyss-navy);
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(2, 21, 35, 0.25);
+  border-radius: 0;
+  padding: var(--sp-2) 0;
+  width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  transition: border-color var(--duration-fast);
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  border-color: var(--abyss-navy);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: rgba(2, 21, 35, 0.3);
+}
+
+.form-select {
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23021523' stroke-opacity='0.4' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0 center;
+  padding-right: var(--sp-4);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 120px;
+  line-height: var(--leading-body);
+}
+
+/* Submit button */
+.form-submit-wrap {
+  padding-top: var(--sp-3);
+}
+
+/* Success state */
+.form-success {
+  display: none;
+  padding: var(--sp-6) 0;
+  text-align: center;
+}
+
+.form-success.is-visible { display: block; }
+
+.form-success-text {
+  font-family: var(--font-serif);
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--abyss-navy);
+  line-height: var(--leading-snug);
+}
